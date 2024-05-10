@@ -1,0 +1,49 @@
+import registroAbatidos.*
+
+test "Devuelve si esta el valor 49 de abatidos o no en determinado dia" {
+	assert.that(registroAbatidosCOD.algunDiaAbatio(49))
+}
+
+test "Devuelve si esta el valor 52 de abatidos o no en determinado dia" {
+	assert.notThat(registroAbatidosCOD.algunDiaAbatio(52))
+}
+
+test "Devuelve el maximo de valor de abatidos, en este caso 62" {
+	assert.equals(62, registroAbatidosCOD.maximoValorDeAbatidos())
+}
+
+test "Devuelve los valores pares de abatidos hechos por jugador" {
+	assert.equals([18, 62], registroAbatidosCOD.valoresDeAbatidosPares())
+}
+
+test "Devuelve si la cantidad de abatidos hecha por el jugador en distintos dias están entre 10 y 100" {
+	assert.that(registroAbatidosCOD.abatidosEsAcotada(10,100))
+}
+
+test "Devuelve si la cantidad de abatidos hecha por el jugador en distintos dias están entre 20 y 100, en este caso, deberia dar falso porque 18 no está en el rango" {
+	assert.notThat(registroAbatidosCOD.abatidosEsAcotada(20,100))
+}
+
+test "Devuelve las cantidades de abatidos hecha por un jugador que sean mayores a 35, en este caso, 43, 49, 62, 39" {
+	assert.equals([43, 49, 62, 39], registroAbatidosCOD.diasConAbatidosSuperioresA(35))
+}
+
+test "Devuelve si la cantidad total de abatidos hecha por un jugador es 244" {
+	assert.equals(244, registroAbatidosCOD.totalAbatidos())
+}
+
+test "Devuelve si esta el último valor de abatidos hecho hasta el momento, en este caso, 39" {
+	assert.equals(39, registroAbatidosCOD.ultimoValorDeAbatidos())
+}
+
+test "Devuelve las cantidades de abatidos mayores a la cantidad de abatidos hecha el primer dia registrado, en este caso, son 2" {
+	assert.equals(2, registroAbatidosCOD.cantidadAbatidosMayorALaPrimera())
+}
+
+test "Devuelve si en al menos 1 día la cantidad de abatidos es mayor de 50" {
+	assert.that(registroAbatidosCOD.algunDiaAbatioMasDe(50))
+}
+
+test "Devuelve si en todos los dias registrados la cantidad de abatidos es mayor de 30" {
+	assert.notThat(registroAbatidosCOD.todosLosDiasAbatioMasDe(30))
+}
