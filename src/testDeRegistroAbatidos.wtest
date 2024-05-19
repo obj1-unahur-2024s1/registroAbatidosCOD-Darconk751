@@ -25,7 +25,7 @@ test "Devuelve si la cantidad de abatidos hecha por el jugador en distintos dias
 }
 
 test "Devuelve las cantidades de abatidos hecha por un jugador que sean mayores a 35, en este caso, 43, 49, 62, 39" {
-	assert.equals([43, 49, 62, 39], registroAbatidosCOD.diasConAbatidosSuperioresA(35))
+	assert.equals([43, 49, 62, 39], registroAbatidosCOD.abatidosSuperioresA(35))
 }
 
 test "Devuelve si la cantidad total de abatidos hecha por un jugador es 244" {
@@ -46,4 +46,8 @@ test "Devuelve si en al menos 1 día la cantidad de abatidos es mayor de 50" {
 
 test "Devuelve si en todos los dias registrados la cantidad de abatidos es mayor de 30" {
 	assert.notThat(registroAbatidosCOD.todosLosDiasAbatioMasDe(30))
+}
+
+test "Devuelve falso porque no es crack"{
+	assert.notThat(registroAbatidosCOD.esCrack())
 }
